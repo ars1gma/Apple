@@ -123,7 +123,7 @@
                     <div class="section-label">Профессиональная цель</div>
                     <p class="text-block">Освоить язык программирования C++ и в долгосрочной перспективе расширить свой стек другими современными языками.</p>
                 </div>
-                <!-- Профиль 3: Евгения -->
+                                <!-- Профиль 3: Евгения -->
                 <div id="p-evgenia" class="profile">
                     <div class="name">Мосина Евгения</div>
                     
@@ -140,7 +140,7 @@
                     <p class="text-block">Освоить язык программирования C++ и в перспективе изучить другие востребованные языки.</p>
                 </div>
 
-                <!-- Профиль 4: Валерий (Обновленный контент) -->
+                <!-- Профиль 4: Валерий -->
                 <div id="p-valeriy" class="profile">
                     <div class="name">Бутерус Валерий</div>
                     
@@ -169,20 +169,15 @@
             </a>
         </section>
 
-        <!-- Подвал со счетчиком -->
+        <!-- Чистый минималистичный подвал без счетчиков -->
         <footer>
-            <div style="margin-bottom: 24px; margin-top: 80px;">
-                <span style="font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #888888; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 8px 16px; border-radius: 20px;">
-                    👁️ Просмотры: <span id="visit-counter" style="color: #ffffff; font-weight: 700; text-shadow: 0 0 10px rgba(255,255,255,0.6); font-family: monospace;">1</span>
-                </span>
-            </div>
-            <div style="font-size: 9px; font-family: monospace; letter-spacing: 2px; color: #333; text-transform: uppercase;">
+            <div style="font-size: 9px; font-family: monospace; letter-spacing: 2px; color: #444; text-transform: uppercase; margin-top: 80px;">
                 © 2026 // НАШ СТАРТ В ИТ // АРХИТЕКТУРНАЯ СТРУКТУРА ВЕБ-ПРОСТРАНСТВА
             </div>
         </footer>
     </div>
 
-    <!-- Обновленный рабочий скрипт -->
+    <!-- Скрипт переключения вкладок и обновления контактов -->
     <script>
         // База данных контактов с прямым открытием приложения Telegram
         var contactData = {
@@ -191,18 +186,6 @@
             'evgenia': { text: 'Написать Евгении', link: 'tg://resolve?domain=zesya7' },
             'valeriy': { text: 'Написать Валерию', link: 'tg://resolve?domain=liststatist' }
         };
-
-        // Счётчик посещений
-        document.addEventListener('DOMContentLoaded', function() {
-            let visits = localStorage.getItem('siteVisits');
-            if (!visits) {
-                visits = 1;
-            } else {
-                visits = parseInt(visits) + 1;
-            }
-            localStorage.setItem('siteVisits', visits);
-            document.getElementById('visit-counter').innerText = visits;
-        });
 
         // Функция переключения вкладок
         function switchTab(id) {
@@ -224,7 +207,7 @@
                 targetBtn.classList.add('active');
             }
 
-            // Плавное обновление ссылки на приложение Telegram
+            // Обновление ссылки и текста на кнопке связи
             var contactBtn = document.getElementById('dynamic-contact-btn');
             if (contactBtn && contactData[id]) {
                 contactBtn.innerText = contactData[id].text;
