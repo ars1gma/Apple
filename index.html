@@ -20,7 +20,7 @@
         
         .wrapper { max-width: 640px; margin: 0 auto; }
         
-        /* Верхний блок с расширенным живым текстом */
+        /* Upper block */
         header { margin-bottom: 56px; }
         .tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 20px; }
         h1 { font-size: 40px; font-weight: 300; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 28px; text-transform: uppercase; }
@@ -140,15 +140,18 @@
                     <p class="text-block">Освоить язык программирования C++ и в перспективе изучить другие востребованные языки.</p>
                 </div>
 
-                <!-- Профиль 4: Валерий -->
+                <!-- Профиль 4: Валерий (Обновленный контент) -->
                 <div id="p-valeriy" class="profile">
                     <div class="name">Бутерус Валерий</div>
                     
                     <div class="section-label">Стек технологий</div>
-                    <p class="text-block" style="color: #444; font-style: italic;">Профиль в процессе заполнения</p>
+                    <div class="labels-container">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                    </div>
                     
                     <div class="section-label">Интересы и увлечения</div>
-                    <p class="text-block" style="color: #444; font-style: italic;">Профиль в процессе заполнения</p>
+                    <p class="text-block">Увлечение киберспортивными дисциплинами 🎮, графический дизайн 🎨 и радиотехника 📻.</p>
                     
                     <div class="section-label">Профессиональная цель</div>
                     <p class="text-block">Освоить язык программирования C++ и в перспективе расширить стек другими языками.</p>
@@ -161,12 +164,12 @@
         <div class="line"></div>
         <section style="text-align: center; margin-top: 20px;">
             <div class="tag" style="margin-bottom: 24px;">СВЯЗЬ С УЧАСТНИКОМ</div>
-            <a href="https://t.me" id="dynamic-contact-btn" target="_blank" class="action-link">
+            <a href="tg://resolve?domain=ars1gma" id="dynamic-contact-btn" class="action-link">
                 Написать Аннуру
             </a>
         </section>
 
-        <!-- Подвал с акцентным счетчиком -->
+        <!-- Подвал со счетчиком -->
         <footer>
             <div style="margin-bottom: 24px; margin-top: 80px;">
                 <span style="font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #888888; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 8px 16px; border-radius: 20px;">
@@ -179,17 +182,17 @@
         </footer>
     </div>
 
-    <!-- Исправленный рабочий скрипт -->
+    <!-- Обновленный рабочий скрипт -->
     <script>
-        // База данных контактов для динамической кнопки
+        // База данных контактов с прямым открытием приложения Telegram
         var contactData = {
-            'annur': { text: 'Написать Аннуру', link: 'https://t.me' },
-            'vladislav': { text: 'Написать Владиславу', link: 'https://t.me' },
-            'evgenia': { text: 'Написать Евгении', link: 'https://t.me' },
-            'valeriy': { text: 'Написать Валерию', link: 'https://t.me' }
+            'annur': { text: 'Написать Аннуру', link: 'tg://resolve?domain=ars1gma' },
+            'vladislav': { text: 'Написать Владиславу', link: 'tg://resolve?domain=vladislavmitko' },
+            'evgenia': { text: 'Написать Евгении', link: 'tg://resolve?domain=zesya7' },
+            'valeriy': { text: 'Написать Валерию', link: 'tg://resolve?domain=liststatist' }
         };
 
-        // Логика счетчика посещений через localStorage
+        // Счётчик посещений
         document.addEventListener('DOMContentLoaded', function() {
             let visits = localStorage.getItem('siteVisits');
             if (!visits) {
@@ -201,7 +204,7 @@
             document.getElementById('visit-counter').innerText = visits;
         });
 
-        // Функция переключения вкладок с обновлением кнопки действия
+        // Функция переключения вкладок
         function switchTab(id) {
             var profiles = document.querySelectorAll('.profile');
             for (var i = 0; i < profiles.length; i++) {
@@ -221,7 +224,7 @@
                 targetBtn.classList.add('active');
             }
 
-            // Динамически меняем текст и ссылку на эстетичной кнопке
+            // Плавное обновление ссылки на приложение Telegram
             var contactBtn = document.getElementById('dynamic-contact-btn');
             if (contactBtn && contactData[id]) {
                 contactBtn.innerText = contactData[id].text;
