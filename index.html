@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команда | Начало пути в ИТ</title>
+    <style>
+        /* Швейцарская типографика и архитектурный минимализм */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; -webkit-font-smoothing: antialiased; }
+        
+        /* Атмосферный фон с природой высокого разрешения */
+        body { 
+            background: linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.95) 100%), 
+                        url('https://unsplash.com') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff !important; 
+            line-height: 1.6; 
+            padding: 100px 24px; 
+        }
+        
+        .wrapper { max-width: 640px; margin: 0 auto; }
+        
+        /* Верхний блок с расширенным живым текстом */
+        header { margin-bottom: 56px; }
+        .tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-bottom: 20px; }
+        h1 { font-size: 40px; font-weight: 300; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 28px; text-transform: uppercase; }
+        .desc-paragraph { color: #aaaaaa; font-size: 15px; font-weight: 300; text-align: justify; margin-bottom: 16px; }
+        
+        /* Эстетичная разделительная линия */
+        .line { height: 1px; background: rgba(255,255,255,0.08); margin: 40px 0; }
+        
+        /* Навигация (меню в стиле Nieuw Bergen) */
+        .menu { display: flex; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 40px; gap: 8px; }
+        .tab-btn { background: transparent; border: none; color: #444; padding: 16px 0; flex: 1; cursor: pointer; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; text-align: left; transition: 0.3s; }
+        .tab-btn:hover { color: #fff; }
+        .tab-btn.active { color: #fff; position: relative; }
+        .tab-btn.active::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 24px; height: 1px; background: #fff; }
+        
+        /* Плавное растворение при переключении */
+        .profile { display: none; animation: cubicFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .profile.active { display: block; }
+        @keyframes cubicFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .name { font-size: 24px; font-weight: 400; letter-spacing: -0.5px; margin-bottom: 24px; text-transform: uppercase; }
+        
+        /* Горизонтальные теги для навыков */
+        .labels-container { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
+        .skill-tag { font-size: 11px; font-weight: 500; font-family: monospace; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); padding: 4px 10px; border-radius: 4px; color: #dddddd; }
+        
+        /* Сетка описания хобби и целей */
+        .section-label { font-size: 9px; font-weight: 700; text-transform: uppercase; color: #444; letter-spacing: 2px; margin-bottom: 10px; margin-top: 24px; }
+        .text-block { font-size: 14px; color: #cccccc; font-weight: 300; margin-bottom: 4px; }
+        
+        /* Эстетичная архитектурная кнопка связи */
+        .action-link { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: #ffffff; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 12px 24px; border-radius: 4px; transition: all 0.3s ease; background: rgba(255,255,255,0.02); }
+        .action-link:hover { border-color: #ffffff; background: rgba(255,255,255,0.05); }
+        
+        footer { margin-top: 100px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Вводное пространство без лишнего пафоса -->
+        <header>
+            <div class="tag">01 // НАШ СТАРТ В ИТ</div>
+            <h1>ОДНА КОМАНДА.<br>БОЛЬШИЕ ЦЕЛИ.</h1>
+            <p class="desc-paragraph">
+                Всем привет! Мы — команда единомышленников, которые только начинают свой большой путь в мире технологий. Эта страница — наша визитная карточка, наше общее пространство, где мы объединили свои силы, интересы и амбиции. Мы отлично понимаем, что сейчас стоим в самом начале, но у каждого из нас есть огромное желание развиваться, учиться новому и двигаться вперёд.
+            </p>
+            <p class="desc-paragraph">
+                Наша главная цель — не просто плыть по течению, а прокачаться по максимуму, создавать крутые проекты в будущем и стать востребованными специалистами, которые меняют индустрию к лучшему. Мы верим, что синергия, поддержка друг друга и постоянная работа над собой помогут нам достичь невероятных высот. Дальше — только больше, и это только начало нашего пути!
+            </p>
+        </header>
+
+        <div class="line"></div>
+
+        <section>
+            <div class="tag" style="margin-bottom: 16px;">УЧАСТНИКИ ГРУППЫ</div>
+            
+            <!-- Архитектурная навигация по вкладкам -->
+            <div class="menu">
+                <button onclick="switchTab('annur')" id="btn-annur" class="tab-btn active">Аннур</button>
+                <button onclick="switchTab('vladislav')" id="btn-vladislav" class="tab-btn">Владислав</button>
+                <button onclick="switchTab('evgenia')" id="btn-evgenia" class="tab-btn">Евгения</button>
+                <button onclick="switchTab('valeriy')" id="btn-valeriy" class="tab-btn">Валерий</button>
+            </div>
+
+            <div class="content">
+                
+                <!-- Профиль 1: Аннур -->
+                <div id="p-annur" class="profile active">
+                    <div class="name">Ибраев Аннур</div>
+                    
+                    <div class="section-label">Стек технологий</div>
+                    <div class="labels-container">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Golang</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                    </div>
+                    
+                    <div class="section-label">Интересы и увлечения</div>
+                    <p class="text-block">Программирование 💻, командный волейбол 🏐, регулярный силовой тренинг в качалке 💪.</p>
+                    
+                    <div class="section-label">Профессиональная цель</div>
+                    <p class="text-block">Освоить языки C++ и Go на глубоком уровне и в будущем успешно войти в сферу системного проектирования (System Design).</p>
+                </div>
+
+                <!-- Профиль 2: Владислав -->
+                <div id="p-vladislav" class="profile">
+                    <div class="name">Митько Владислав</div>
+                    
+                    <div class="section-label">Стек технологий</div>
+                    <div class="labels-container">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">HTML</span>
+                    </div>
+                    
+                    <div class="section-label">Интересы и увлечения</div>
+                    <p class="text-block">Стратегический анализ в шахматах ♛, классическое и спортивное фехтование 🤺.</p>
+                    
+                    <div class="section-label">Профессиональная цель</div>
+                    <p class="text-block">Освоить язык программирования C++ и в долгосрочной перспективе расширить свой стек другими современными языками.</p>
+                </div>
+                <!-- Профиль 3: Евгения -->
+                <div id="p-evgenia" class="profile">
+                    <div class="name">Мосина Евгения</div>
+                    
+                    <div class="section-label">Стек технологий</div>
+                    <div class="labels-container">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">HTML</span>
+                    </div>
+                    
+                    <div class="section-label">Интересы и увлечения</div>
+                    <p class="text-block">Просмотр мировых сериалов 📺, шоппинг 🛍️, изучение индустрии моды и стиля 👠.</p>
+                    
+                    <div class="section-label">Профессиональная цель</div>
+                    <p class="text-block">Освоить язык программирования C++ и в перспективе изучить другие востребованные языки.</p>
+                </div>
+
+                <!-- Профиль 4: Валерий -->
+                <div id="p-valeriy" class="profile">
+                    <div class="name">Бутерус Валерий</div>
+                    
+                    <div class="section-label">Стек технологий</div>
+                    <p class="text-block" style="color: #444; font-style: italic;">Профиль в процессе заполнения</p>
+                    
+                    <div class="section-label">Интересы и увлечения</div>
+                    <p class="text-block" style="color: #444; font-style: italic;">Профиль в процессе заполнения</p>
+                    
+                    <div class="section-label">Профессиональная цель</div>
+                    <p class="text-block">Освоить язык программирования C++ и в перспективе расширить стек другими языками.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Единый интерактивный блок связи -->
+        <div class="line"></div>
+        <section style="text-align: center; margin-top: 20px;">
+            <div class="tag" style="margin-bottom: 24px;">СВЯЗЬ С УЧАСТНИКОМ</div>
+            <a href="https://t.me" id="dynamic-contact-btn" target="_blank" class="action-link">
+                Написать Аннуру
+            </a>
+        </section>
+
+        <!-- Подвал с акцентным счетчиком -->
+        <footer>
+            <div style="margin-bottom: 24px; margin-top: 80px;">
+                <span style="font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #888888; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 8px 16px; border-radius: 20px;">
+                    👁️ Просмотры: <span id="visit-counter" style="color: #ffffff; font-weight: 700; text-shadow: 0 0 10px rgba(255,255,255,0.6); font-family: monospace;">1</span>
+                </span>
+            </div>
+            <div style="font-size: 9px; font-family: monospace; letter-spacing: 2px; color: #333; text-transform: uppercase;">
+                © 2026 // НАШ СТАРТ В ИТ // АРХИТЕКТУРНАЯ СТРУКТУРА ВЕБ-ПРОСТРАНСТВА
+            </div>
+        </footer>
+    </div>
+
+    <!-- Исправленный рабочий скрипт -->
+    <script>
+        // База данных контактов для динамической кнопки
+        var contactData = {
+            'annur': { text: 'Написать Аннуру', link: 'https://t.me' },
+            'vladislav': { text: 'Написать Владиславу', link: 'https://t.me' },
+            'evgenia': { text: 'Написать Евгении', link: 'https://t.me' },
+            'valeriy': { text: 'Написать Валерию', link: 'https://t.me' }
+        };
+
+        // Логика счетчика посещений через localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            let visits = localStorage.getItem('siteVisits');
+            if (!visits) {
+                visits = 1;
+            } else {
+                visits = parseInt(visits) + 1;
+            }
+            localStorage.setItem('siteVisits', visits);
+            document.getElementById('visit-counter').innerText = visits;
+        });
+
+        // Функция переключения вкладок с обновлением кнопки действия
+        function switchTab(id) {
+            var profiles = document.querySelectorAll('.profile');
+            for (var i = 0; i < profiles.length; i++) {
+                profiles[i].classList.remove('active');
+            }
+            var targetProfile = document.getElementById('p-' + id);
+            if (targetProfile) {
+                targetProfile.classList.add('active');
+            }
+
+            var buttons = document.querySelectorAll('.tab-btn');
+            for (var j = 0; j < buttons.length; j++) {
+                buttons[j].classList.remove('active');
+            }
+            var targetBtn = document.getElementById('btn-' + id);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
+
+            // Динамически меняем текст и ссылку на эстетичной кнопке
+            var contactBtn = document.getElementById('dynamic-contact-btn');
+            if (contactBtn && contactData[id]) {
+                contactBtn.innerText = contactData[id].text;
+                contactBtn.setAttribute('href', contactData[id].link);
+            }
+        }
+    </script>
+</body>
+</html>
